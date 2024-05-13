@@ -6,7 +6,7 @@ Para crear el presente proyecto se han ejecutado los siguientes comandos:
 ```bash
 npx create-expo-app my-app
 cd my-app
-npm install -g expo-cli
+npm install -g expo-cli # Instalar Expo CLI: sirve para crear y gestionar proyectos de Expo
 npx expo install react-dom react-native-web @expo/metro-runtime
 ```
 
@@ -62,5 +62,9 @@ Como se esta trabajando en un proyecto, el cual aún esta desordenado, se ha apl
 se recorre entre los archivos contenidos en "page"
 ### Al .Screen se le han aplicado las prop
 
+### TRABAJO PRACTICO N° 6
+
+## Ver en MostrarApi.js
+npm install --save react-native-size-matters
 
 ...se continuará y mejorará para cerrar una idea de hacia dónde se orienta la app

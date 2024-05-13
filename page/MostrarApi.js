@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, StyleSheet, View } from 'react-native';
+import { Button, View } from 'react-native';
 import { Text, FlatList } from "react-native";
+import { ScaledSheet } from 'react-native-size-matters';
 
 export default function MostrarApi() {
 
@@ -30,7 +31,7 @@ export default function MostrarApi() {
     );
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     listItem: {
         padding: 10,
         marginTop: 5,
@@ -38,8 +39,17 @@ const styles = StyleSheet.create({
         borderColor: '#000',
         borderWidth: 1,
         borderRadius: 5,
+
     },
     text: {
         fontSize: 18,
+        padding: '10@ms0.3', 
+        width: '50@ms', 
+        height: '30@mvs0.3', 
+        width: '300@s', 
+        height: '30@vs', 
+        padding: '2@msr',
+        margin: 5,
+        backgroundColor: 'red',
     },
 });

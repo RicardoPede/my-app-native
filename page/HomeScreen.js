@@ -1,29 +1,45 @@
 import React from "react";
 import { TouchableOpacity, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DetailsScreen from "./DetailsScreen";
+import CheckApp from "./MyCheckBox";
+import MyApp from "./Main";
+import MostrarApi from "./MostrarApi";
+
+const Stack = createNativeStackNavigator();
+
+const HomeView = ({ navigation }) => (
+    <View style={styles.container}>
+    <ImageBackground style={styles.image}>
+        <Text style={styles.text}>Elements</Text>
+        <Text style={styles.text}>in Front Of</Text>
+        <Text style={styles.text}>Background</Text>
+    </ImageBackground>
+
+    <View style={styles.buttonsContainer}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('DetailsScreen')}>
+            <Text style={styles.buttonText}>Go to Details</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CheckApp')}>
+            <Text style={styles.buttonText}>My CheckBox</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MyApp')}>
+            <Text style={styles.buttonText}>My App</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MostrarApi')}>
+            <Text style={styles.buttonText}>Mostrar API</Text>
+        </TouchableOpacity>
+    </View>
+</View>
+);
 
 const HomeScreen = ({ navigation }) => (
-    <View style={styles.container}>
-        <ImageBackground style={styles.image}>
-            <Text style={styles.text}>Elements</Text>
-            <Text style={styles.text}>in Front Of</Text>
-            <Text style={styles.text}>Background</Text>
-        </ImageBackground>
-
-        <View style={styles.buttonsContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Details')}>
-                <Text style={styles.buttonText}>Go to Details</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('CheckApp')}>
-                <Text style={styles.buttonText}>My CheckBox</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MyApp')}>
-                <Text style={styles.buttonText}>My App</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MostrarApi')}>
-                <Text style={styles.buttonText}>Mostrar API</Text>
-            </TouchableOpacity>
-        </View>
-    </View>
+    <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeView} />
+        <Stack.Screen name="CheckApp" component={CheckApp} />
+        <Stack.Screen name="MyApp" component={MyApp} />
+        <Stack.Screen name="MostrarApi" component={MostrarApi} />
+    </Stack.Navigator>
 );
 
 const styles = StyleSheet.create({

@@ -1,5 +1,4 @@
 import React from "react";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
@@ -8,7 +7,6 @@ import MyApp from "./page/Main";
 import CheckApp from "./page/MyCheckBox";
 import MostrarApi from "./page/MostrarApi";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import DetailsScreen from "./page/DetailsScreen";
 
 const ButtonNav = createBottomTabNavigator();
 
@@ -57,7 +55,6 @@ function App() {
                 <ButtonNav.Screen name="MyApp" component={MyApp} />
                 <ButtonNav.Screen name="CheckApp" component={CheckApp} />
                 <ButtonNav.Screen name="MostrarApi" component={MostrarApi} />
-                <ButtonNav.Screen name="Details" component={DetailsScreen} />
             </ButtonNav.Navigator>
         </NavigationContainer>
     );
