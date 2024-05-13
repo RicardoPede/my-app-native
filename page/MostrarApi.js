@@ -8,7 +8,7 @@ export default function MostrarApi() {
     const [lista, setLista] = useState([])
 
     const appi = async () => {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=100');
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?offset=0&limit=10');
         const json = await response.json();
         console.log(json);
         setLista(json);
@@ -22,6 +22,8 @@ export default function MostrarApi() {
             data={lista.results}
             keyExtractor={item => item.name}
             ListHeaderComponent={() => <Button title="Mostrar Pokemon" onPress={appi} />}
+            ListFooterComponent={() => <Button title="Ocultar Pokemon" onPress={() => setLista([])} />}
+
             renderItem={({ item, index }) => (
                 <View style={styles.listItem}>
                     <Text style={styles.text}>{index + 1}: {item.name}</Text>
